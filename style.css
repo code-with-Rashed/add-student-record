@@ -1,0 +1,162 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* header start */
+.header{
+    background:#111;
+    padding:30px 0px;
+}
+.header h1{
+    text-align: center;
+    color:#fff;
+    font-weight: bold;
+}
+/* header end */
+
+/* Data added or searched section start */
+.data-add-search{
+   padding:15px 0;
+   background:rgb(246, 243, 243);
+}
+.add-search{
+  margin: 10px 10%;
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.add-data button{
+    padding:10px 8px;
+    background:#111;
+    color:#fff;
+    border:0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.data-search input[type="search"]{
+    width:250px;
+    padding:8px 8px;
+    border:1px solid #888;
+    border-radius:4px;
+    outline:none;
+}
+/* Data added or searched section end */
+
+/* Records Show section start */
+.record-show{
+    padding:25px 0;
+}
+.record-box{
+    margin:10px 10%;
+}
+.record-box table{
+     width:80%;
+    margin:8px auto;
+    text-align: center; 
+    border-collapse: collapse;
+}
+table , th ,td{
+    border:1px solid rgb(68, 67, 67);
+}
+thead th{
+    padding:8px;
+    background:#121212;
+    color:#fff;
+    font-weight: bold;
+}
+tbody td{
+    padding:6px;
+    background:rgb(228, 223, 223);
+}
+.edit{
+    width:80px;
+    padding:4px 6px;
+    cursor: pointer;
+    background:skyblue;
+    font-weight: bolder;
+    border:0;
+    border-radius: 4px;
+}
+.delete{
+    width:80px;
+    padding:4px 6px;
+    cursor: pointer;
+    background:tomato;
+    font-weight: bolder;
+    border:0;
+    border-radius: 4px;
+}
+/* Records Show section end */
+
+/* Add & edit Records start */
+.add-record , .edit-record{
+   background: rgba(17, 15, 15, 0.137);
+   width:100%;
+   height:100%;
+   position:fixed;
+   top:0;
+   left:0;
+   z-index:100;
+   display:none;
+}
+.add-record-box , .edit-record-box{
+    width:300px;
+    padding:25px;
+    background:#f9f9fa;
+    border-radius:8px;
+    position:relative;
+    top:30%;
+    left:calc(50% - 150px)
+
+}
+input[type="text"],input[type="number"],select{
+    width:100%;
+    padding:6px;
+    border:1px solid #777;
+    border-radius:4px;
+    outline-color:skyblue;
+    margin:5px;
+}
+input[type="submit"]{
+    display:block;
+    width:80px;
+    margin:5px auto;
+    padding:5px;
+    border-radius:4px;
+    background:skyblue;
+    font-weight: bold;
+    cursor: pointer;
+    border:0;
+}
+.close{
+    width:30px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius:50%;
+    cursor: pointer;
+    background:tomato;
+    color:#fff;
+    position: absolute;
+    top:-15px; 
+    right:-15px;
+}
+/* Add & edit Records end */
+
+/* Responsive css */
+@media(max-width:700px){
+    .record-box{
+        overflow: auto;
+    }
+    .add-search{
+        flex-direction: column-reverse;
+    }
+    .data-search{
+        margin-bottom:25px;
+    }
+}

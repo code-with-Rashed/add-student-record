@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Records in LocalStorage.</title>
+</head>
+
+<body>
+    <!-- header  start -->
+    <header class="header">
+        <h1>Student Records.</h1>
+    </header>
+    <!-- header  end -->
+
+    <!-- Data added or searched section start -->
+    <section class="data-add-search">
+        <div class="add-search">
+            <div class="add-data">
+                <button id="add">Add a New Record</button>
+            </div>
+            <div class="data-search">
+                <input type="search" id="search" placeholder="Search here">
+            </div>
+        </div>
+    </section>
+    <!-- Data added or searched section end -->
+
+    <!-- Records Show section start -->
+    <section class="record-show">
+        <div class="record-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll.</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Gander</th>
+                        <th>Phone</th>
+                        <th>City</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Records Show section end -->
+
+    <!-- Add & edit Records start -->
+    <div class="add-record">
+        <div class="add-record-box">
+            <form id="formHandle">
+                <input type="text" name="name" required placeholder="Name">
+                <input type="text" name="class" required placeholder="Class">
+                <select name="gander" required>
+                    <option value="" selected disabled>Select Gander</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <input type="number" name="number" required placeholder="Number">
+                <input type="text" name="city" required placeholder="City">
+                <input type="submit" value="Save">
+            </form>
+            <div class="close">X</div>
+        </div>
+    </div>
+    <div class="edit-record">
+        <div class="edit-record-box">
+            <form id="editFormHandle"></form>
+            <div class="close">X</div>
+        </div>
+    </div>
+    <!-- Add & edit Records end -->
+    <script src="app.js"></script>
+</body>
+
+</html>
