@@ -25,26 +25,26 @@ function loadData() {
     } else {
         html += `<tr><td colspan="8">Record Not Found !!!!</td></tr>`;
     }
-    document.getElementById('tbody').innerHTML = html;
+    selectElement('tbody').innerHTML = html;
 }
 loadData();
 
-document.getElementById("add").addEventListener("click", () => {
-    document.getElementsByClassName("add-record")[0].style.display = "block";
+selectElement("add").addEventListener("click", () => {
+    selectElement("add-record-form").style.display = "block";
 });
 
 //Close Modal Box
 function closeBox() {
-    document.getElementsByClassName("close")[0].addEventListener("click", () => {
-        document.getElementsByClassName("add-record")[0].style.display = "none";
-        document.getElementById("formHandle").reset();
+    selectElement("close-add-record-form").addEventListener("click", () => {
+        selectElement("add-record-form").style.display = "none";
+        selectElement("formHandle").reset();
     });
-    document.getElementsByClassName("close")[1].addEventListener("click", () => {
-        document.getElementsByClassName("edit-record")[0].style.display = "none";
+    selectElement("close-edit-record-form").addEventListener("click", () => {
+        selectElement("edit-record-form").style.display = "none";
     });
-    document.getElementsByClassName("add-record")[0].style.display = "none";
-    document.getElementsByClassName("edit-record")[0].style.display = "none";
-    document.getElementById("formHandle").reset();
+    selectElement("add-record-form").style.display = "none";
+    selectElement("edit-record-form").style.display = "none";
+    selectElement("formHandle").reset();
 };
 closeBox();
 
@@ -57,7 +57,7 @@ function formValidator(valid) {
 }
 
 //Get New Record 
-document.getElementById("formHandle").addEventListener("submit", function (e) {
+selectElement("formHandle").addEventListener("submit", function (e) {
     e.preventDefault();
     let formData = {};
     let isValid = false;
@@ -118,11 +118,11 @@ function editData(e_ind) {
                        <input type="number" name="number" required value="${selectData.number}">
                        <input type="text" name="city" required value="${selectData.city}">
                        <input type="submit" value="Update">`;
-    document.getElementById("editFormHandle").innerHTML = editForm;
+    selectElement("editFormHandle").innerHTML = editForm;
     document.getElementsByClassName("edit-record")[0].style.display = "block";
 
     //Update Data Form
-    document.getElementById("editFormHandle").addEventListener("submit", function (e) {
+    selectElement("editFormHandle").addEventListener("submit", function (e) {
         e.preventDefault();
         let isValid = false;
         let updateData = {};
@@ -144,7 +144,7 @@ function editData(e_ind) {
 }
 
 //Search Data
-document.getElementById("search").addEventListener("keyup", function (res) {
+selectElement("search").addEventListener("keyup", function (res) {
     if (res.target.value !== "") {
         if (res.key === "Enter") {
             let find = res.target.value.toLowerCase();
@@ -170,9 +170,14 @@ document.getElementById("search").addEventListener("keyup", function (res) {
             if (!resultExist) {
                 resultStore += `<tr><td colspan="8">Search Result Not Found !!!!</td></tr>`;
             }
-            document.getElementById('tbody').innerHTML = resultStore;
+            selectElement('tbody').innerHTML = resultStore;
         }
     } else {
         loadData();
     }
 });
+
+//select any element then return
+function selectElement(elem) {
+    return document.getElementById(elem);
+}
